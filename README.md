@@ -17,7 +17,7 @@ Per poter usufruire dell'applicativo devono essere installati sulla macchina:
 - Node.js (Ver. minima: 12.18.2);
 - npm (Ver. minima: 6.14.8);
 
-Per eseguire l'applicativo, una volta installati i software necessari, si proceda a clonare il repository e, dopo aver aperto una sessione di terminale si lanci il comando `npm start` all'interno della cartella.
+Una volta installati i software necessari, si proceda a clonare il repository e, dopo aver aperto una sessione di terminale, si lanci il comando `npm install` all'interno della cartella per installare le dipendenze seguito da `npm start` per eseguire l'applicativo.
 
 ### Modifiche all'applicativo
 
