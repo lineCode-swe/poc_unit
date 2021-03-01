@@ -19,6 +19,11 @@ Per poter usufruire dell'applicativo devono essere installati sulla macchina:
 
 Per eseguire l'applicativo, una volta installati i software necessari, si proceda a clonare il repository e, dopo aver aperto una sessione di terminale si lanci il comando `npm start` all'interno della cartella.
 
+### Modifiche all'applicativo
+
+Attualmente, l'intera logica dell'applicativo è contenuto nel file `src/index.js`.
+Qualsiasi modifica debba essere fatta, quello è il punto in cui può (e deve) avvenire.
+
 ### Precisazioni
 
 La versione proposta viene scritta e intesa a solo e unico scopo dimostrativo di quella che deve essere la pertinenza della tecnologia con l'attività progettuale (unita alla sottintesa ma necessaria competenza sviluppata nei confronti delle tecnologie dal gruppo).
