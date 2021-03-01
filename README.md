@@ -1,8 +1,8 @@
 # PoC per il controllo Unità
 ## Progetto PORTACS
-Corso di IS dell'Università degli studi di Padova
-San Marco Informatica
-Gruppo lineCode
+Corso di IS dell'Università degli studi di Padova |
+San Marco Informatica |
+Gruppo lineCode |
 A.A. 2020/2021
 
 -----------------------------------------------------
