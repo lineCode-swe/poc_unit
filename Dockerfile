@@ -1,4 +1,4 @@
-FROM node:15.10-alpine3.12
+FROM node:15-alpine3.12
 
 WORKDIR /app
 
@@ -9,3 +9,6 @@ COPY src/index.js src/index.js
 RUN ["npm", "install"]
 
 ENTRYPOINT ["npm", "start"]
+
+# Run in shell with:
+# docker run --rm --network host --interactive --tty <image_name>
