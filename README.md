@@ -1,30 +1,16 @@
-# PoC per il controllo Unità
-## Progetto PORTACS
-Corso di IS dell'Università degli studi di Padova |
-San Marco Informatica |
-Gruppo lineCode |
-A.A. 2020/2021
+![gruppo lineCode](https://imagizer.imageshack.com/img923/557/86bUrf.png)
 
------------------------------------------------------
+# PoC Unità Mobile - PORTACS
+Proof of Concept di un'unità mobile per il colloquio sulla Technology Baseline con il prof. Riccardo Cardin.
 
-### Overview
+## Overview
+L'applicativo funge da PoC e simula il comportamento di un unità mobile nel sistema real-time progettato e sviluppato come attività progettuale per il corso di SWE dell'Università degli Studi di Padova sotto il nominativo di Progetto _PORTACS_.
 
-L'applicativo funge da PoC e simula il comportamente di un Unità a guida autonoma nel sistema Real-time progettato e sviluppato come attività progettuale per il corso di IS dell'Università degli studi di Padova sotto il nominativo di "Progetto PORTACS".
-
-### Installazione e dipendenze
-
+## Installazione, dipendenze ed esecuzione
 Per poter usufruire dell'applicativo devono essere installati sulla macchina:
-- Node.js (Ver. minima: 12.18.2);
-- npm (Ver. minima: 6.14.8);
+- Node.js
+- npm
 
-Una volta installati i software necessari, si proceda a clonare il repository e, dopo aver aperto una sessione di terminale, si lanci il comando `npm install` all'interno della cartella per installare le dipendenze seguito da `npm start` per eseguire l'applicativo.
+Si lanci il comando `npm install` all'interno della repo per installare le dipendenze seguito da `npm start` per eseguire l'applicativo.
 
-### Modifiche all'applicativo
-
-Attualmente, l'intera logica dell'applicativo è contenuto nel file `src/index.js`.
-Qualsiasi modifica debba essere fatta, quello è il punto in cui può (e deve) avvenire.
-
-### Precisazioni
-
-La versione proposta viene scritta e intesa a solo e unico scopo dimostrativo di quella che deve essere la pertinenza della tecnologia con l'attività progettuale (unita alla sottintesa ma necessaria competenza sviluppata nei confronti delle tecnologie dal gruppo).
-Se non funfa e non fa per voi, siete stati avvisati.
+È presente, in questa repo, un Dockerfile per creare un container dell'applicazione.
