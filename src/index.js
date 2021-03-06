@@ -94,7 +94,7 @@ function createLogo() {
         }
         console.log(data);
     });
-}
+};
 
 async function moveBotDef(track) {
     internal_data_def.path = 0;
@@ -107,7 +107,7 @@ async function moveBotDef(track) {
         console.log("New position:\nX: " + internal_data_def.x + "\nY: " + internal_data_def.y + "\n");
     }
     console.log("Unit has arrived to destination");
-}
+};
 
 const sendDefPostRequest = async () => {
     try {
@@ -130,7 +130,7 @@ async function moveBotObs(track) {
         console.log("New position:\nX: " + internal_data_obs.x + "\nY: " + internal_data_obs.y + "\n");
     }
     console.log("Unit has arrived to destination");
-}
+};
 
 const sendObsPostRequest = async () => {
     try {
@@ -141,10 +141,23 @@ const sendObsPostRequest = async () => {
     }
 };
 
+async function moveBotMultiObs(track) {
+    internal_data_obs.path = 0;
+    for (var step in track) {
+        internal_data_multi_obs.x = track[step].x;
+        internal_data_multi_obs.y = track[step].y;
+        await axios.post('http://0.0.0.0:8080/myapp/unit', internal_data_multi_obs);
+        await new Promise(resolve => setTimeout(resolve, 2500));
+        console.log("Unit has advanced");
+        console.log("New position:\nX: " + internal_data_multi_obs.x + "\nY: " + internal_data_multi_obs.y + "\n");
+    }
+    console.log("Unit has arrived to destination");
+};
+
 const sendMultiObsPostRequest = async () => {
     try {
         const resp = await axios.post('http://0.0.0.0:8080/myapp/unit', internal_data_multi_obs);
-        moveBotObs(resp.data);
+        moveBotMultiObs(resp.data);
     } catch (err) {
         console.error(err);
     }
