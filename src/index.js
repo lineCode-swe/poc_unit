@@ -152,38 +152,38 @@ const sendMultiObsPostRequest = async () => {
 
 createLogo();
 
-console.log("Unit is up. Starting in 15 seconds")
-setTimeout(() => {
-    console.log("Starting a new unit with multiple obstacles");
-    sendMultiObsPostRequest();
-}, 15000);
+// console.log("Unit is up. Starting in 15 seconds")
+// setTimeout(() => {
+//     console.log("Starting a new unit with multiple obstacles");
+//     sendMultiObsPostRequest();
+// }, 15000);
 
 
-// setTimeout(function () {
-//     inquirer
-//         .prompt([
-//             {
-//                 type: 'list', message: "Select the operation you wish to execute:", name: 'operation', choices: [
-//                     "Start a new unit with no obstacle",
-//                     "Start a new unit with 1 obstacle",
-//                     "Start a new unit with multiple obstacles"
-//                 ]
-//             }
-//         ])
-//         .then(answers => {
-//             if (answers.operation === "Start a new unit with no obstacle") {
-//                 sendDefPostRequest();
-//             } else if (answers.operation === "Start a new unit with 1 obstacle") {
-//                 sendObsPostRequest();
-//             } else if (answers.operation === "Start a new unit with multiple obstacles") {
-//                 sendMultiObsPostRequest();
-//             }
-//         })
-//         .catch(error => {
-//             if (error.isTtyError) {
-//                 console.log("Oops, somenthing went wrong");
-//             } else {
-//                 console.log("Oops, somenthing went wrong");
-//             }
-//         });
-// }, 100)
+setTimeout(function () {
+    inquirer
+        .prompt([
+            {
+                type: 'list', message: "Select the operation you wish to execute:", name: 'operation', choices: [
+                    "Start a new unit with no obstacle",
+                    "Start a new unit with 1 obstacle",
+                    "Start a new unit with multiple obstacles"
+                ]
+            }
+        ])
+        .then(answers => {
+            if (answers.operation === "Start a new unit with no obstacle") {
+                sendDefPostRequest();
+            } else if (answers.operation === "Start a new unit with 1 obstacle") {
+                sendObsPostRequest();
+            } else if (answers.operation === "Start a new unit with multiple obstacles") {
+                sendMultiObsPostRequest();
+            }
+        })
+        .catch(error => {
+            if (error.isTtyError) {
+                console.log("Oops, somenthing went wrong");
+            } else {
+                console.log("Oops, somenthing went wrong");
+            }
+        });
+}, 100)
