@@ -2,6 +2,70 @@ const axios = require('axios');
 const figlet = require('figlet');
 const inquirer = require('inquirer');
 
+var internal_data_multi_obs = {
+    "x": 5,
+    "y": 0,
+    "path": 1,
+    "obstacle": [
+        {
+            "x": 6,
+            "y": 0
+        },
+        {
+            "x": 6,
+            "y": 1
+        },
+        {
+            "x": 8,
+            "y": 1
+        },
+        {
+            "x": 8,
+            "y": 2
+        },
+        {
+            "x": 10,
+            "y": 0
+        },
+        {
+            "x": 10,
+            "y": 1
+        },
+        {
+            "x": 12,
+            "y": 1
+        },
+        {
+            "x": 13,
+            "y": 1
+        },
+        {
+            "x": 14,
+            "y": 1
+        },
+        {
+            "x": 14,
+            "y": 2
+        },
+        {
+            "x": 16,
+            "y": 0
+        },
+        {
+            "x": 16,
+            "y": 1
+        },
+        {
+            "x": 18,
+            "y": 1
+        },
+        {
+            "x": 18,
+            "y": 2
+        },
+    ]
+}
+
 var internal_data_obs = {
     "x": 3,
     "y": 1,
@@ -10,7 +74,7 @@ var internal_data_obs = {
         {
             "x": 12,
             "y": 1
-        }
+        },
     ]
 }
 
@@ -71,15 +135,29 @@ async function moveBotObs(track) {
 const sendObsPostRequest = async () => {
     try {
         const resp = await axios.post('http://0.0.0.0:8080/myapp/unit', internal_data_obs);
-        //console.log(resp.data);
         moveBotObs(resp.data);
     } catch (err) {
         console.error(err);
     }
 };
 
+const sendMultiObsPostRequest = async () => {
+    try {
+        const resp = await axios.post('http://0.0.0.0:8080/myapp/unit', internal_data_multi_obs);
+        moveBotObs(resp.data);
+    } catch (err) {
+        console.error(err);
+    }
+};
 
 createLogo();
+
+// console.log("Unit is up. Starting in 15 seconds")
+// setTimeout(() => {
+//     console.log("Starting a new unit with multiple obstacles");
+//     sendMultiObsPostRequest();
+// }, 15000);
+
 
 setTimeout(function () {
     inquirer
@@ -87,7 +165,8 @@ setTimeout(function () {
             {
                 type: 'list', message: "Select the operation you wish to execute:", name: 'operation', choices: [
                     "Start a new unit with no obstacle",
-                    "Start a new unit with 1 obstacle"
+                    "Start a new unit with 1 obstacle",
+                    "Start a new unit with multiple obstacles"
                 ]
             }
         ])
@@ -96,6 +175,8 @@ setTimeout(function () {
                 sendDefPostRequest();
             } else if (answers.operation === "Start a new unit with 1 obstacle") {
                 sendObsPostRequest();
+            } else if (answers.operation === "Start a new unit with multiple obstacles") {
+                sendMultiObsPostRequest();
             }
         })
         .catch(error => {
